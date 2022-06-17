@@ -26,8 +26,8 @@ public:
             }
             else{
                 arr[i+zeroNum]=0;
-                arr[i+zeroNum-1]=0;
                 zeroNum--;
+                arr[i+zeroNum]=0;
             }
         }
 
