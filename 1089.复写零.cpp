@@ -11,27 +11,32 @@ using namespace std;
 class Solution {
 public:
     void duplicateZeros(vector<int>& arr) {
-        int zeroNum =0;
-        for(auto i:arr){
-            if(i==0)zeroNum++;
-        }
-
-        int len=arr.size();
-
-        arr.resize(arr.size()+zeroNum,0);
-
-        for(int i=arr.size()-1-zeroNum;i>=0;i--){
-            if(arr[i]!=0){
-                arr[i+zeroNum]=arr[i];
-            }
-            else{
-                arr[i+zeroNum]=0;
-                zeroNum--;
-                arr[i+zeroNum]=0;
+        int n = arr.size();
+        int top = 0;
+        int i = -1;
+        while (top < n) {
+            i++;
+            if (arr[i] != 0) {
+                top++;
+            } else {
+                top += 2;
             }
         }
-
-        arr.resize(len);
+        int j = n - 1;
+        if (top == n + 1) {
+            arr[j] = 0;
+            j--;
+            i--;
+        } 
+        while (j >= 0) {
+            arr[j] = arr[i];
+            j--;
+            if (!arr[i]) {
+                arr[j] = arr[i];
+                j--;
+            } 
+            i--;
+        }
     }
 };
 // @lc code=end
