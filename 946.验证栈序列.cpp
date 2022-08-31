@@ -1,7 +1,7 @@
 // @before-stub-for-debug-begin
 #include <vector>
 #include <string>
-#include "commoncppproblem946.h"
+//#include "commoncppproblem946.h"
 
 using namespace std;
 // @before-stub-for-debug-end
