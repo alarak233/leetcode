@@ -16,7 +16,6 @@ using namespace std;
 class Solution {
 public:
     int lastRemaining(int n) {
-        if(n==1)return 1;
         int start=1;
         int end=n;
         int diff=1;
