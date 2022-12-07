@@ -14,11 +14,11 @@ public:
         if(nums1.size()>6*nums2.size()||nums1.size()*6<nums2.size())return -1;
         vector<int> cnt1(6),cnt2(6);
         int diff=0;
-        for(auto num:nums1){
+        for(auto& num:nums1){
             cnt1[num-1]++;
             diff+=num;
         }
-        for(auto num:nums2){
+        for(auto& num:nums2){
             cnt2[num-1]++;
             diff-=num;
         }
